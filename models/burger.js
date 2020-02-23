@@ -1,11 +1,11 @@
-var orm = require("/orm");
+var orm = require("../config/orm");
 
 var burger = {
     selectAll: function (cb){
-    orm.selectAll(burgers, function(result){
-    cb(result);
+    orm.selectAll("burgers", function(result){
+        //console.log("Result from burger object inside models: " + result);
+    cb(result);//removed return kwd
     });
-   
 }
 }
 

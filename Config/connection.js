@@ -1,12 +1,12 @@
 var mysql = require("mysql");
-var passWord = require("/passWord");
-
+var passWord = require("../passWord");
+//console.log("Making connection");
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
     password: passWord,
-    database: "burger_db"
+    database: "burgers_db"
   });
   
   connection.connect(function(err) {

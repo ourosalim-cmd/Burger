@@ -1,6 +1,6 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
-var mysql = require("mysql");
+//var mysql = require("mysql");
 
 const PORT = process.env.PORT || 8080;
 
@@ -13,15 +13,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
+//var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/catsController.js");
-
+var routes = require("./controllers/burgers_Controller.js");
+//var routers = express.Router();
 app.use(routes);
+//app.use(require("./controllers/burgers_Controller.js"));
+//require("./controllers/burgers_Controller.js")
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

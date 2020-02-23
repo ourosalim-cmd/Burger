@@ -13,3 +13,5 @@ app.post("/", function(req, res){
 app.put("/", function(req, res){
     
 })
+
+module.exports = router;

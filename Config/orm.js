@@ -1,12 +1,13 @@
 var connection = require("./connection");
 
 var orm = {
-    selectAll: function(table, cb){
-        var queryStr = "SELECT * FROM burgers" + table + ";";
+    selectAll: function(tableName, cb){
+        var queryStr = "SELECT * FROM " + tableName + ";";
 
         connection.query(queryStr, function(err, result){
             if (err) throw err;
-            cb(result);
+            //console.log("Result from burger database request inside config/orm: " + result)
+            cb(result);//removed return kwd
         });
     }
 }
