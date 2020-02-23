@@ -1,4 +1,5 @@
 node_modules
+passWord.js
 # Logs
 logs
 *.log
