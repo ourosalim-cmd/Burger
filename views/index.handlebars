@@ -1,0 +1,15 @@
+		<div class="container">
+            <div class="row pic"><img src="./assets/img/burger.jpg" alt=""></div>
+            <h3>Eat Da Burger!</h3>
+            <div class="row">
+                <div class="col">Burger to be devour
+                    <ol>
+                        {{#each burgers}}
+                            {{> burgers/burger-block devour=false}}
+                        {{/each}}
+                    </ol>
+                </div>
+                <div class="col">Devoured Burger</div>
+            </div>
+            <div></div>
+        </div>

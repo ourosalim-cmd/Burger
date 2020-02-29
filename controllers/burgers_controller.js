@@ -8,8 +8,8 @@ router.get("/", function(req, res) {
         burgers: data
       };
       //console.log("Printing from controler: " + hbsObject);
-      res.send(hbsObject)// res.send
-      //res.render("index", hbsObject);
+      //res.send(hbsObject)// res.send
+      res.render("index", hbsObject);
     });
   });
   module.exports = router;

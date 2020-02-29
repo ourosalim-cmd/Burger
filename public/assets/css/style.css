@@ -1,0 +1,24 @@
+.container{
+    background-color: #FFC45D;
+}
+h3{
+    text-align: center;
+    color: #FE5743;
+}
+img{
+    background-color: #FFC45D;
+    width: 30%;
+    height: 30%;
+}
+.pic{
+    margin-left: 47%;
+    margin-right: 30%;
+}
+.devour {
+    color: black;
+    background-color: #FFFEFF;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    /* float: right;  backg col #E8E8EE*/
+}
