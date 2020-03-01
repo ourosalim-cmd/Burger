@@ -1,5 +1,5 @@
 var express = require("express");
-var burger = require("../models/burger");
+var burger = require("../models/burger.js");
 var router = express.Router();
 //console.log("Making controles");
 router.get("/", function(req, res) {
@@ -12,4 +12,20 @@ router.get("/", function(req, res) {
       res.render("index", hbsObject);
     });
   });
+  //////////////////
+  router.post("/api/burgers", function(req, res) {
+    //var burger = require("../models/burger.js");
+    burger.create([
+      "burger_name", "devour"
+    ], [
+      req.body.burger_name, req.body.devour
+    ], function(result) {
+      // Send back the ID of the new quote
+      //res.json({ id: result.insertId });
+      console.log("New Poste " + result)
+      res.json({ id: result.insertId });
+      //res.json(result);
+    });
+  });
+  //////////////////////
   module.exports = router;

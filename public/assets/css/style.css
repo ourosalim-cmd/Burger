@@ -1,5 +1,6 @@
 .container{
     background-color: #FFC45D;
+    padding: 5%;
 }
 h3{
     text-align: center;
@@ -21,4 +22,8 @@ img{
     margin-bottom: 5%;
     margin-top: 5%;
     /* float: right;  backg col #E8E8EE*/
+}
+.addBurger{
+    width: 30%;
+    margin: 5% 30% 5% 40%;
 }
