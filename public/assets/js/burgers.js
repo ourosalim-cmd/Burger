@@ -1,10 +1,12 @@
+$(function(){
 $(".addBurger").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
+    console.log("adding new burger");
     event.preventDefault();
 
     var newBurger = {
       burger_name: $("#burger").val().trim(),
-      devour: false
+      devoured: "0"
     };
 
     // Send the POST request.
@@ -19,3 +21,4 @@ $(".addBurger").on("submit", function(event) {
       }
     );
   });
+});

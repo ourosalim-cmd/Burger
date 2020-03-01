@@ -1,6 +1,8 @@
 var express = require("express");
 var burger = require("../models/burger.js");
 var router = express.Router();
+
+
 //console.log("Making controles");
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
@@ -12,13 +14,13 @@ router.get("/", function(req, res) {
       res.render("index", hbsObject);
     });
   });
-  //////////////////
+ 
   router.post("/api/burgers", function(req, res) {
     //var burger = require("../models/burger.js");
     burger.create([
-      "burger_name", "devour"
+      "burger_name", "devoured"
     ], [
-      req.body.burger_name, req.body.devour
+      req.body.burger_name, req.body.devoured
     ], function(result) {
       // Send back the ID of the new quote
       //res.json({ id: result.insertId });

@@ -6,6 +6,11 @@ var burger = {
         //console.log("Result from burger object inside models: " + result);
     cb(result);//removed return kwd
     });
+},
+create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
+      cb(res);
+    });
 }
 }
 
