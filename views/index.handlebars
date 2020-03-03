@@ -13,13 +13,13 @@
                 </div>
 
                 <div class="col">
-                    <ol class="devBurger">
+                    <ul class="devBurger">
                         {{#each burgers}}
                             {{#if devoured}}
                                 {{> burgers/devBurger-block devoured=true}}
                             {{/if}}
                         {{/each}}
-                    </ol>
+                    </ul>
                 </div>
             </div>
             <div class="row">

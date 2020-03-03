@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
       res.render("index", hbsObject);
     });
   });
- 
+
   router.post("/api/burgers", function(req, res) {
     //var burger = require("../models/burger.js");
     burger.create([
@@ -28,25 +28,23 @@ router.get("/", function(req, res) {
       res.json({ id: result.insertId });
       //res.json(result);
     });
-///////////////////////////
+});
+
 router.put("/api/burgers/:id", function(req, res) {
-  console.log("id = " + req.params.id);
   var condition = "id = " + req.params.id;
-  //var condition = req.params.id;
 
   console.log("condition", condition);
 
   burger.update({
-    devoured: req.body.devoured//replaced body. with params.
+    devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
-      //res.status(200).end();
-      res.render("index", result.changedRows);
+      res.status(200).end();
     }
   });
 });
-});
+
   module.exports = router;

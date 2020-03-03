@@ -25,28 +25,30 @@ $(".addBurger").on("submit", function(event) {
 ////////
 $(".devour").on("click", function(event) {
     var parent = $(this).parent();
+    //var id = $(this).data("id");
     var id = $(this).data("id");
-    var devoured = $(this).data("devoured");
+    console.log(id);
+    var devoured = $(this).data("isdevoured");
+    //console.log($(this).parent().parent());
+    console.log(devoured);
+    //console.log("simple devoured: "+devoured);
     // $(".devBurger").append($(this));
 
-    var newDevouredState = {
-      devoured: devoured
+    var newValue = {
+      devoured: true
     };
-
+    console.log("changed to ", newValue);
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newDevouredState
+      data: newValue
     }).then(
       function() {
-        console.log("changed to ", devoured);
+        console.log("changed to ", newValue.devoured);
         // Reload the page to get the updated list
-        //location.reload();
+        location.reload();
       }
     );
   });
-
-////////////////////////////
-
 
 });
