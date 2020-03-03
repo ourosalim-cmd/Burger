@@ -5,12 +5,22 @@
                 <div class="col">Burger to be devour
                     <ol>
                         {{#each burgers}}
-                            {{> burgers/burger-block devour=false}}
+                            {{#unless devoured}}
+                                {{> burgers/burger-block devour=false}}
+                            {{/unless}}
                         {{/each}}
                     </ol>
                 </div>
 
-                <div class="col">Devoured Burger</div>
+                <div class="col">
+                    <ol class="devBurger">
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                {{> burgers/devBurger-block devoured=true}}
+                            {{/if}}
+                        {{/each}}
+                    </ol>
+                </div>
             </div>
             <div class="row">
                 <form class="addBurger">

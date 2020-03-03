@@ -21,4 +21,32 @@ $(".addBurger").on("submit", function(event) {
       }
     );
   });
+
+////////
+$(".devour").on("click", function(event) {
+    var parent = $(this).parent();
+    var id = $(this).data("id");
+    var devoured = $(this).data("devoured");
+    // $(".devBurger").append($(this));
+
+    var newDevouredState = {
+      devoured: devoured
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newDevouredState
+    }).then(
+      function() {
+        console.log("changed to ", devoured);
+        // Reload the page to get the updated list
+        //location.reload();
+      }
+    );
+  });
+
+////////////////////////////
+
+
 });
